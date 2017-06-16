@@ -3,6 +3,6 @@
 ## Prerequesites
 * [Yarn](https://yarnpkg.com/)
 
-## Instructions
-* `yarn`
-* `yarn build`
+## Local Build Instructions
+* `$ yarn`
+* `$ yarn build`
