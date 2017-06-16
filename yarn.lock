@@ -2,6 +2,22 @@
 # yarn lockfile v1
 
 
+rollup@^0.43.0:
+  version "0.43.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.43.0.tgz#b36bdb75fa5e0823b6de8aee18ff7b5655520543"
+  dependencies:
+    source-map-support "^0.4.0"
+
+source-map-support@^0.4.0:
+  version "0.4.15"
+  resolved "https://registry.yarnpkg.com/source-map-support/-/source-map-support-0.4.15.tgz#03202df65c06d2bd8c7ec2362a193056fef8d3b1"
+  dependencies:
+    source-map "^0.5.6"
+
+source-map@^0.5.6:
+  version "0.5.6"
+  resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.6.tgz#75ce38f52bf0733c5a7f0c118d81334a2bb5f412"
+
 tslib@^1.7.1:
   version "1.7.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.7.1.tgz#bc8004164691923a79fe8378bbeb3da2017538ec"
