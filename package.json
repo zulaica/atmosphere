@@ -2,5 +2,9 @@
   "name": "Atmosphere",
   "version": "1.0.0",
   "author": "David Zulaica <david@zulaica.info>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "tslib": "^1.7.1",
+    "typescript": "^2.3.4"
+  }
 }
