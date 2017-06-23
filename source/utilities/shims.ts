@@ -6,7 +6,7 @@
   */
 export function getUserMedia(constraints: MediaStreamConstraints) {
   if (!navigator.mediaDevices) {
-    console.log('🚫 no media devices')
+    console.log('🚫 No mediaDevices support.')
     navigator.mediaDevices = <MediaDevices>{}
   }
 
