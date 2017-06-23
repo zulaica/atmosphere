@@ -1,3 +1,5 @@
+import { getUserMedia } from './utilities/shims'
+
 const constraints = {
   audio: true,
   video: false
@@ -11,7 +13,7 @@ const handleSuccess = () =>
 
 const application = () => {
   try {
-    navigator.mediaDevices.getUserMedia(constraints)
+    getUserMedia(constraints)
       .then(handleSuccess)
       .catch(handleError)
   } catch(error) {
