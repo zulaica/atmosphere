@@ -1,5 +1,3 @@
-console.info('Hello, world!')
-
 const handleError = () =>
   console.info('Microphone access disabled.')
 
