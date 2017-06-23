@@ -1,9 +1,11 @@
 console.info('Hello, world!')
 
+const handleError = () =>
+  console.info('Microphone access disabled.')
+
+const handleSuccess = () =>
+  console.info('Microphone access enabled.')
+
 navigator.mediaDevices.getUserMedia({ 'audio': true })
-  .then(() => {
-    console.info('Microphone access enabled.')
-  })
-  .catch(() => {
-    console.warn('Microphone access disabled.')
-  })
+  .then(handleSuccess)
+  .catch(handleError)
