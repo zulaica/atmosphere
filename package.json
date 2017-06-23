@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "David Zulaica <david@zulaica.info>",
   "devDependencies": {
+    "@types/webrtc": "^0.0.21",
     "rollup": "^0.43.0",
     "tslib": "^1.7.1",
     "typescript": "^2.3.4"

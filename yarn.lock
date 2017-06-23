@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@types/webrtc@^0.0.21":
+  version "0.0.21"
+  resolved "https://registry.yarnpkg.com/@types/webrtc/-/webrtc-0.0.21.tgz#bc3cfb7e22add284761e5d63efad664b0eba8b86"
+
 rollup@^0.43.0:
   version "0.43.0"
   resolved "https://registry.yarnpkg.com/rollup/-/rollup-0.43.0.tgz#b36bdb75fa5e0823b6de8aee18ff7b5655520543"
