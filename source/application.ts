@@ -6,10 +6,10 @@ const constraints = {
 }
 
 const handleError = () =>
-  console.warn('Microphone access disabled.')
+  console.warn('🎤 Microphone access disabled.')
 
 const handleSuccess = () =>
-  console.info('Microphone access enabled.')
+  console.info('🎤 Microphone access enabled.')
 
 const application = () => {
   try {
