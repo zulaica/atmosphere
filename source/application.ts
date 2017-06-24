@@ -1,17 +1,9 @@
 import { getUserMedia } from './utilities/shims'
+import { createFriendlyError } from './utilities/error-handling'
 
 const constraints = {
   audio: true,
   video: false
-}
-
-const createFriendlyError = (error: Error) => {
-  let friendlyError: Error = error
-  switch (error.name) {
-    case 'PermissionDeniedError':
-      friendlyError = new Error('🎤 Microphone access disabled.')
-  }
-  console.log(friendlyError.message)
 }
 
 const handleError = (error: Error) =>
