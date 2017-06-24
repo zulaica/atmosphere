@@ -1,8 +1,20 @@
-export const createFriendlyError = (error: Error) => {
-  let friendlyError: Error = error
-  switch (error.name) {
-    case 'PermissionDeniedError':
-      friendlyError = new Error('🎤 Microphone access disabled.')
+const isLegacyError = (error: string) => {
+  return typeof error === 'string'
+}
+
+export const createFriendlyError = (error: any) => {
+  let errorObject = error
+
+  if (isLegacyError(error)) {
+    errorObject = new Error(error)
+    errorObject.name = errorObject.message
   }
-  console.log(friendlyError.message)
+
+  switch (errorObject.name) {
+    case 'PERMISSION_DENIED':
+    case 'PermissionDeniedError':
+      errorObject = new Error('🎤 Microphone access disabled.')
+  }
+
+  console.log(errorObject.message)
 }
