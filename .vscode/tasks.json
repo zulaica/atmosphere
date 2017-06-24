@@ -8,5 +8,5 @@
     "isBuildCommand": true,
     "isBackground": true,
     "problemMatcher":"$tsc",
-    "showOutput": "always"
+    "showOutput": "silent"
 }
