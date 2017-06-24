@@ -5,8 +5,17 @@ const constraints = {
   video: false
 }
 
+const createFriendlyError = (error: Error) => {
+  let friendlyError: Error = error
+  switch (error.name) {
+    case 'PermissionDeniedError':
+      friendlyError = new Error('🎤 Microphone access disabled.')
+  }
+  console.log(friendlyError.message)
+}
+
 const handleError = (error: Error) =>
-  console.warn(error.message)
+  createFriendlyError(error)
 
 const handleSuccess = () =>
   console.info('🎤 Microphone access enabled.')
