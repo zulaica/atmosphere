@@ -16,6 +16,10 @@ export function getUserMedia(constraints: MediaStreamConstraints) {
                          navigator.mozGetUserMedia ||
                          navigator.webkitGetUserMedia
     console.log(`Legacy getUserMedia support: ${!!getUserMedia}`)
+
+    return new Promise((resolve, reject) => {
+      getUserMedia.call(navigator, constraints, resolve, reject)
+    })
   }
 
   return navigator.mediaDevices.getUserMedia(constraints)
