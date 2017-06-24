@@ -6,7 +6,7 @@
   * https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia#Using_the_new_API_in_older_browsers
   */
 /// <reference types="webrtc" />
-export function getUserMedia(constraints: MediaStreamConstraints) {
+export const getUserMedia = (constraints: MediaStreamConstraints) => {
   if (!navigator.mediaDevices) {
     navigator.mediaDevices = <MediaDevices>{}
   }
