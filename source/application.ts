@@ -5,20 +5,16 @@ const constraints = {
   video: false
 }
 
-const handleError = () =>
-  console.warn('🎤 Microphone access disabled.')
+const handleError = (error: Error) =>
+  console.warn(error.message)
 
 const handleSuccess = () =>
   console.info('🎤 Microphone access enabled.')
 
 const application = () => {
-  try {
-    getUserMedia(constraints)
-      .then(handleSuccess)
-      .catch(handleError)
-  } catch(error) {
-    console.error('Your browser is not supported.')
-  }
+  getUserMedia(constraints)
+    .then(handleSuccess)
+    .catch(handleError)
 }
 
 window.addEventListener('load', application, false)
