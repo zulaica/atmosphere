@@ -10,6 +10,6 @@
     "typescript": "^2.3.4"
   },
   "scripts": {
-    "build": "rm -rf dist/* && tsc && rollup -c"
+    "build": "rm -rf dist build && tsc && rollup -c"
   }
 }
