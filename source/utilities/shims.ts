@@ -2,6 +2,8 @@
   * ----------------------------------------------------------------------------
   * Microphone and Camera Access
   * ----------------------------------------------------------------------------
+  * Basic shim ported from MDN example
+  * https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia#Using_the_new_API_in_older_browsers
   */
 /// <reference types="webrtc" />
 export function getUserMedia(constraints: MediaStreamConstraints) {
