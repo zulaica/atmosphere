@@ -16,5 +16,5 @@ export const createFriendlyError = (error: any) => {
       errorObject = new Error('🎤 Microphone access disabled.')
   }
 
-  console.log(errorObject.message)
+  console.error(errorObject.message)
 }
