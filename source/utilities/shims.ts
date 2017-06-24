@@ -15,7 +15,6 @@ export function getUserMedia(constraints: MediaStreamConstraints) {
     const getUserMedia = navigator.getUserMedia ||
                          navigator.mozGetUserMedia ||
                          navigator.webkitGetUserMedia
-    console.log(`Legacy getUserMedia support: ${!!getUserMedia}`)
 
     if (!getUserMedia) {
       return Promise.reject(new Error('😢 Your browser is not supported.'))
