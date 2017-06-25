@@ -1,8 +1,10 @@
+import { noop } from './helpers'
+
 export const formatError = (error: any) => {
   isLegacyError(error)
     .then(createErrorObject)
     .then(createFriendlyError)
-    .catch(() => {})
+    .catch(noop)
 }
 
 const isLegacyError = (error: any) => {
