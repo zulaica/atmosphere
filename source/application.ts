@@ -1,5 +1,6 @@
 import { getUserMedia } from './utilities/shims'
 import { formatError } from './utilities/error-handling'
+import { Poller } from './utilities/helpers'
 
 const constraints = {
   audio: true,
@@ -30,19 +31,6 @@ const getCurrentSecond = () => {
     (currentTime.getMinutes() * 60) +
     currentTime.getSeconds()
   )
-}
-
-class Poller {
-  intervalId: number
-  start = (fn: Function, duration: number) => {
-    if (!this.intervalId) {
-      this.intervalId = setInterval(fn, duration)
-    }
-  }
-  stop = () => {
-    clearInterval(this.intervalId)
-    this.intervalId = -1
-  }
 }
 
 window.addEventListener('load', application, false)
