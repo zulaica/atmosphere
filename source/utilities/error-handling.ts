@@ -2,7 +2,7 @@ export const formatError = (error: any) => {
   isLegacyError(error)
     .then(createErrorObject)
     .then(createFriendlyError)
-    .catch(createFriendlyError)
+    .catch(() => {})
 }
 
 const isLegacyError = (error: any) => {
@@ -10,14 +10,14 @@ const isLegacyError = (error: any) => {
     return Promise.resolve(error)
   }
 
-  return Promise.reject(error)
+  return Promise.reject(createFriendlyError(error))
 }
 
 const createErrorObject = (error: string) => {
   let errorObject = new Error(error)
   errorObject.name = errorObject.message
 
-  return Promise.resolve(errorObject)
+  return errorObject
 }
 
 const createFriendlyError = (error: Error) => {
