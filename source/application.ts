@@ -17,14 +17,14 @@ const application = () => {
     .then(handleSuccess)
     .catch(handleError)
 
-  setInterval(function() {
-    getCurrentSecond()
-      .then(logCurrentSecond)
-  }, 1000)
+  const currentSecondPoller = new Poller
+  currentSecondPoller.start(getCurrentSecond, 1000)
+  setTimeout(currentSecondPoller.stop, 10000)
 }
 
 const getCurrentSecond = () => {
   const currentTime = new Date()
+  console.log('asdf')
   return Promise.resolve(
     (currentTime.getHours() * 3600) +
     (currentTime.getMinutes() * 60) +
@@ -32,8 +32,17 @@ const getCurrentSecond = () => {
   )
 }
 
-const logCurrentSecond = (second: number) => {
-  console.log(second)
+class Poller {
+  intervalId: number
+  start = (fn: Function, duration: number) => {
+    if (!this.intervalId) {
+      this.intervalId = setInterval(fn, duration)
+    }
+  }
+  stop = () => {
+    clearInterval(this.intervalId)
+    this.intervalId = -1
+  }
 }
 
 window.addEventListener('load', application, false)
