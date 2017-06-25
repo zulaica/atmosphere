@@ -2,6 +2,7 @@
   "name": "atmosphere",
   "version": "1.0.0",
   "author": "David Zulaica <david@zulaica.info>",
+  "license": "CC-BY-NC-SA-4.0",
   "devDependencies": {
     "@types/webrtc": "^0.0.21",
     "rollup": "^0.43.0",
