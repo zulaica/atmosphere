@@ -19,18 +19,27 @@ const application = () => {
     .catch(handleError)
 
   const currentSecondPoller = new Poller
-  currentSecondPoller.start(getCurrentSecond, 1000)
+  currentSecondPoller.start(
+    getCurrentSecond,
+    1000
+  )
+
   setTimeout(currentSecondPoller.stop, 10000)
 }
 
 const getCurrentSecond = () => {
   const currentTime = new Date()
-  console.log('asdf')
+  const currentSecond = (currentTime.getHours() * 3600) +
+                        (currentTime.getMinutes() * 60) +
+                        currentTime.getSeconds()
+
   return Promise.resolve(
-    (currentTime.getHours() * 3600) +
-    (currentTime.getMinutes() * 60) +
-    currentTime.getSeconds()
-  )
+    currentSecond
+  ).then(logCurrentSecond)
+}
+
+const logCurrentSecond = (second: number) => {
+  console.log(second)
 }
 
 window.addEventListener('load', application, false)
