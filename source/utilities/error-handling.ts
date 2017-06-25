@@ -1,13 +1,13 @@
 import { noop } from './helpers'
 
-export const formatError = (error: any) => {
+export const formatError = (error: string | Error) => {
   isLegacyError(error)
     .then(createErrorObject)
     .then(createFriendlyError)
     .catch(noop)
 }
 
-const isLegacyError = (error: any) => {
+const isLegacyError = (error: string | Error) => {
   if (typeof error === 'string') {
     return Promise.resolve(error)
   }

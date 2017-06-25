@@ -6,7 +6,7 @@ const constraints = {
   video: false
 }
 
-const handleError = (error: any) =>
+const handleError = (error: string | Error) =>
   formatError(error)
 
 const handleSuccess = () =>
