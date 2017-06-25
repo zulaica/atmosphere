@@ -16,20 +16,20 @@ const isLegacyError = (error: string | Error) => {
 }
 
 const createErrorObject = (error: string) => {
-  let errorObject = new Error(error)
+  const errorObject = new Error(error)
   errorObject.name = errorObject.message
 
   return errorObject
 }
 
 const createFriendlyError = (error: Error) => {
-  let errorObject = error
-
-  switch (errorObject.name) {
+  switch (error.name) {
     case 'PERMISSION_DENIED':
     case 'PermissionDeniedError':
-      errorObject = new Error('🎤 Microphone access disabled.')
+      console.error('🎤 Microphone access disabled.')
+      break
+    default:
+      console.error(error.message)
+      break
   }
-
-  console.error(errorObject.message)
 }
