@@ -14,17 +14,13 @@ const handleSuccess = () =>
   console.info('🎤 Microphone access enabled.')
 
 const application = () => {
+  const currentSecondPoller = new Poller
+
   getUserMedia(constraints)
     .then(handleSuccess)
+    .then(() => { currentSecondPoller.start(getCurrentSecond, 1000) })
+    .then(() => setTimeout(currentSecondPoller.stop, 10000))
     .catch(handleError)
-
-  const currentSecondPoller = new Poller
-  currentSecondPoller.start(
-    getCurrentSecond,
-    1000
-  )
-
-  setTimeout(currentSecondPoller.stop, 10000)
 }
 
 const getCurrentSecond = () => {
