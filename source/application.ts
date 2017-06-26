@@ -24,9 +24,8 @@ const getCurrentSecond = () => {
   ).then(logCurrentSecond)
 }
 
-const logCurrentSecond = (second: number) => {
+const logCurrentSecond = (second: number) =>
   console.log(second)
-}
 
 const application = () => {
   const currentSecondPoller = new Poller
