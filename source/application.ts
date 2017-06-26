@@ -31,10 +31,9 @@ const getCurrentSecond = () => {
 const logCurrentSecond = (second: number) =>
   console.log(second)
 
-const application = () => {
+const application = () =>
   getUserMedia(constraints)
     .then(handleSuccess)
     .catch(handleError)
-}
 
 window.addEventListener('load', application, false)
