@@ -12,6 +12,7 @@ const handleError = (error: string | Error) =>
 
 const handleSuccess = () => {
   const currentSecondPoller = new Poller
+
   log('info', '🎤 Microphone access enabled.')
     .then(() => { currentSecondPoller.start(getCurrentSecond, 1000) })
     .then(() => setTimeout(currentSecondPoller.stop, 10000))
