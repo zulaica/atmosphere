@@ -1,6 +1,6 @@
 import { getUserMedia } from './utilities/shims'
 import { errorHandler } from './utilities/error-handling'
-import { log, Poller } from './utilities/helpers'
+import { Poller } from './utilities/helpers'
 
 const constraints = {
   audio: true,
@@ -11,7 +11,7 @@ const handleError = (error: string | Error) =>
   errorHandler(error)
 
 const handleSuccess = () =>
-  log('info', '🎤 Microphone access enabled.')
+  console.info('🎤 Microphone access enabled.')
 
 const getCurrentSecond = () => {
   const currentTime = new Date()
