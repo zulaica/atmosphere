@@ -5,6 +5,7 @@ body {
   margin: 0;
   height: 100vh;
   font-family: monospace;
+  line-height: 1.5;
 }
 
 p {
