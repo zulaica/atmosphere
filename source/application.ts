@@ -33,13 +33,12 @@ const logCurrentSecond = (second: number) =>
   log('log', second)
 
 const application = () => {
-  log('info', '   ▶︎ ▲ ▼ ⬆︎ ▶︎  m a d e  t h i s .')
-  log('info', '')
-  log('info', '          ████GITHUB█████')
-  log('info', '            ████████WEBSITE████████')
-  log('info', 'd a v i d @ z u l a i c a . i n f o')
-  log('info', '███████████████EMAIL███████████████')
-  log('info', '          ████TWITTER████')
+  log('info', '\n    ▶︎ ▲ ▼ ⬆︎ ▶︎  m a d e  t h i s . \n ')
+  log('info', '          ┌────GITHUB─────┐')
+  log('info', '            ┌────────WEBSITE────────┐')
+  log('info', ' d a v i d @ z u l a i c a . i n f o')
+  log('info', '└───────────────EMAIL───────────────┘')
+  log('info', '          └────TWITTER────┘')
 
   getUserMedia(constraints)
     .then(handleSuccess)
