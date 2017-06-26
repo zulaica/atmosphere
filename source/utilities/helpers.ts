@@ -1,7 +1,10 @@
 export const displayStatusMessage = (status: string) => {
-  const statusMessage = document.createTextNode(status)
+  const messageContainer = document.createElement('p')
+  const message = document.createTextNode(status)
+  messageContainer.appendChild(message)
+
   return Promise.resolve(
-    document.body.appendChild(statusMessage)
+    document.body.appendChild(messageContainer)
   )
 }
 
