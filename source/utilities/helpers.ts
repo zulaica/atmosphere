@@ -1,4 +1,4 @@
-export const noop = () => {}
+export const noOp = () => {}
 
 export class Poller {
   intervalId: number

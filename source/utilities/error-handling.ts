@@ -1,10 +1,10 @@
-import { noop } from './helpers'
+import { noOp } from './helpers'
 
 export const errorHandler = (error: string | Error) => {
   isLegacyError(error)
     .then(createErrorObject)
     .then(createFriendlyError)
-    .catch(noop)
+    .catch(noOp)
 }
 
 const isLegacyError = (error: string | Error) => {
