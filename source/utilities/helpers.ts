@@ -1,3 +1,10 @@
+export const log = (method: string, message: any) => {
+  return new Promise(() => {
+    // Not happy about the <any> Console index fix...
+    (<any>console)[method].call(console, message)
+  })
+}
+
 export const noop = () => {}
 
 export class Poller {
