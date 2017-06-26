@@ -15,8 +15,8 @@ const handleSuccess = () =>
 
 const getCurrentSecond = () => {
   const currentTime = new Date()
-  const currentSecond = (currentTime.getHours() * 3600) +
-                        (currentTime.getMinutes() * 60) +
+  const currentSecond = currentTime.getHours() * 3600 +
+                        currentTime.getMinutes() * 60 +
                         currentTime.getSeconds()
 
   return Promise.resolve(
