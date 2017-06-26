@@ -13,16 +13,6 @@ const handleError = (error: string | Error) =>
 const handleSuccess = () =>
   console.info('🎤 Microphone access enabled.')
 
-const application = () => {
-  const currentSecondPoller = new Poller
-
-  getUserMedia(constraints)
-    .then(handleSuccess)
-    .then(() => { currentSecondPoller.start(getCurrentSecond, 1000) })
-    .then(() => setTimeout(currentSecondPoller.stop, 10000))
-    .catch(handleError)
-}
-
 const getCurrentSecond = () => {
   const currentTime = new Date()
   const currentSecond = (currentTime.getHours() * 3600) +
@@ -36,6 +26,16 @@ const getCurrentSecond = () => {
 
 const logCurrentSecond = (second: number) => {
   console.log(second)
+}
+
+const application = () => {
+  const currentSecondPoller = new Poller
+
+  getUserMedia(constraints)
+    .then(handleSuccess)
+    .then(() => { currentSecondPoller.start(getCurrentSecond, 1000) })
+    .then(() => setTimeout(currentSecondPoller.stop, 10000))
+    .catch(handleError)
 }
 
 window.addEventListener('load', application, false)
