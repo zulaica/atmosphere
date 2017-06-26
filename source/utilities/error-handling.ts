@@ -26,10 +26,15 @@ const createFriendlyError = (error: Error) => {
   switch (error.name) {
     case 'PERMISSION_DENIED':
     case 'PermissionDeniedError':
-      console.error('🎤 Microphone access disabled.')
-      break
+      return Promise.resolve('🎤 Microphone access disabled.')
+        .then(displayErrorMessage)
     default:
-      console.error(error.message)
-      break
+      return Promise.resolve(error.message)
+        .then(displayErrorMessage)
   }
+}
+
+const displayErrorMessage = (error: string) => {
+  const errorMessage = document.createTextNode(error)
+  document.body.appendChild(errorMessage)
 }
