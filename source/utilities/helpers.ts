@@ -2,7 +2,8 @@
 export const log = (method: string, message: string | number) => {
   return Promise.resolve(
     // Not happy about the <any> Console index fix...
-    (console as any)[method].call(console, message) // tslint:disable-line
+    // tslint:disable-next-line:no-any
+    (console as any)[method].call(console, message)
   )
 }
 
@@ -11,7 +12,8 @@ export const noOp = () => { return }
 export class Poller {
   private intervalId: number
 
-  public start = (fn: Function, duration: number) => { // tslint:disable-line
+// tslint:disable-next-line:ban-types
+  public start = (fn: Function, duration: number) => {
     if (!this.intervalId) {
       this.intervalId = setInterval(fn, duration)
     }
