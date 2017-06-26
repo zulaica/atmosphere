@@ -1,6 +1,6 @@
 import { getUserMedia } from './utilities/shims'
 import { errorHandler } from './utilities/error-handling'
-import { Poller } from './utilities/helpers'
+import { log, Poller } from './utilities/helpers'
 
 const constraints = {
   audio: true,
@@ -10,8 +10,12 @@ const constraints = {
 const handleError = (error: string | Error) =>
   errorHandler(error)
 
-const handleSuccess = () =>
-  console.info('🎤 Microphone access enabled.')
+const handleSuccess = () => {
+  const currentSecondPoller = new Poller
+  log('info', '🎤 Microphone access enabled.')
+    .then(() => { currentSecondPoller.start(getCurrentSecond, 1000) })
+    .then(() => setTimeout(currentSecondPoller.stop, 10000))
+}
 
 const getCurrentSecond = () => {
   const currentTime = new Date()
@@ -28,12 +32,8 @@ const logCurrentSecond = (second: number) =>
   console.log(second)
 
 const application = () => {
-  const currentSecondPoller = new Poller
-
   getUserMedia(constraints)
     .then(handleSuccess)
-    .then(() => { currentSecondPoller.start(getCurrentSecond, 1000) })
-    .then(() => setTimeout(currentSecondPoller.stop, 10000))
     .catch(handleError)
 }
 
