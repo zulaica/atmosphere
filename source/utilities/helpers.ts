@@ -1,3 +1,10 @@
+export const displayStatusMessage = (status: string) => {
+  const statusMessage = document.createTextNode(status)
+  return Promise.resolve(
+    document.body.appendChild(statusMessage)
+  )
+}
+
 // TODO: method parameter should be limited to actual Console methods
 export const log = (method: string, message: string | number) => {
   return Promise.resolve(

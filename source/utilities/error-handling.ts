@@ -1,4 +1,4 @@
-import { noOp } from './helpers'
+import { displayStatusMessage, noOp } from './helpers'
 
 export const errorHandler = (error: string | Error) => {
   isLegacyError(error)
@@ -27,14 +27,9 @@ const createFriendlyError = (error: Error) => {
     case 'PERMISSION_DENIED':
     case 'PermissionDeniedError':
       return Promise.resolve('🎤 Microphone access disabled.')
-        .then(displayErrorMessage)
+        .then(displayStatusMessage)
     default:
       return Promise.resolve(error.message)
-        .then(displayErrorMessage)
+        .then(displayStatusMessage)
   }
-}
-
-const displayErrorMessage = (error: string) => {
-  const errorMessage = document.createTextNode(error)
-  document.body.appendChild(errorMessage)
 }
