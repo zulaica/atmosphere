@@ -1,5 +1,5 @@
 import { getUserMedia } from './utilities/shims'
-import { formatError } from './utilities/error-handling'
+import { errorHandler } from './utilities/error-handling'
 import { Poller } from './utilities/helpers'
 
 const constraints = {
@@ -8,7 +8,7 @@ const constraints = {
 }
 
 const handleError = (error: string | Error) =>
-  formatError(error)
+  errorHandler(error)
 
 const handleSuccess = () =>
   console.info('🎤 Microphone access enabled.')

@@ -1,6 +1,6 @@
 import { noop } from './helpers'
 
-export const formatError = (error: string | Error) => {
+export const errorHandler = (error: string | Error) => {
   isLegacyError(error)
     .then(createErrorObject)
     .then(createFriendlyError)
