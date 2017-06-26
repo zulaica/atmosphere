@@ -9,3 +9,16 @@ body {
 
   font-family: monospace;
 }
+
+p {
+  padding: 1rem;
+  color: white;
+}
+
+.error {
+  background-color: lightcoral
+}
+
+.success {
+  background-color: lightseagreen
+}

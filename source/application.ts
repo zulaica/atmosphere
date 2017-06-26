@@ -13,7 +13,7 @@ const handleError = (error: string | Error) =>
 const handleSuccess = () => {
   const currentSecondPoller = new Poller()
 
-  displayStatusMessage('🎤 Microphone access enabled.')
+  displayStatusMessage('success', '🎤 Microphone access enabled.')
     .then(() => { currentSecondPoller.start(getCurrentSecond, 1000) })
     .then(() => setTimeout(currentSecondPoller.stop, 10000))
 }
