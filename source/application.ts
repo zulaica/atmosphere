@@ -23,9 +23,8 @@ const getCurrentSecond = () => {
   const currentSecond = currentTime.getHours() * 3600 +
                         currentTime.getMinutes() * 60 +
                         currentTime.getSeconds() +
-                        // Prevent a 0 value to allow for a simpler
-                        // representation of totalDegrees and totalSeconds
-                        1
+                        1 // Prevent a 0 value to allow for a simpler
+                          // representation of totalDegrees and totalSeconds.
 
   return Promise.resolve(
     currentSecond
@@ -34,8 +33,8 @@ const getCurrentSecond = () => {
 
 const updateBackgroundColor = (currentSecond: number) => {
   const totalDegrees = 360
-  const hueOffset = 240
-  const totalSeconds = 86400
+  const hueOffset = 240 // Start the day (midnight/0) at blue.
+  const totalSeconds = 86400 // Total number of seconds in a 24-hour period.
 
   const baseHue = hueOffset % totalDegrees
   const hueStep = totalDegrees / totalSeconds
