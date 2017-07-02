@@ -33,13 +33,16 @@ const logCurrentSecond = (second: number) =>
   log('log', second)
 
 const logContactInfo = () => {
-  log('info', '\n    ▶︎ ▲ ▼ ⬆︎ ▶︎  m a d e  t h i s .\n ')
-  log('info', '          ┌────GITHUB─────┐')
-  log('info', '            ┌────────WEBSITE────────┐')
-  log('info', ' d a v i d @ z u l a i c a . i n f o')
-  log('info', '└───────────────EMAIL───────────────┘')
-  log('info', '          └────TWITTER────┘')
-  log('info', '')
+  log('info', `
+    ▶︎ ▲ ▼ ⬆︎ ▶︎  m a d e  t h i s .
+
+          ┌────GITHUB─────┐
+            ┌────────WEBSITE────────┐
+ d a v i d @ z u l a i c a . i n f o
+└───────────────EMAIL───────────────┘
+          └────TWITTER────┘
+
+`)
 }
 
 const application = () => {
