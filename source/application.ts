@@ -11,11 +11,16 @@ const handleError = (error: string | Error) =>
   errorHandler(error)
 
 const handleSuccess = () => {
+  displayStatusMessage('success', '🎤 Microphone access enabled.')
+
   const currentSecondPoller = new Poller()
 
-  displayStatusMessage('success', '🎤 Microphone access enabled.')
-    .then(getCurrentSecond)
-    .then(() => currentSecondPoller.start(getCurrentSecond, 240 * 1000))
+  getCurrentSecond()
+    .then(updateBackgroundColor)
+    .then(() => currentSecondPoller.start(
+      getCurrentSecond()
+        .then(updateBackgroundColor), 240 * 1000)
+    )
     .then(() => setTimeout(currentSecondPoller.stop, 240 * 10 * 1000))
 }
 
@@ -27,9 +32,7 @@ const getCurrentSecond = () => {
                         1 // Prevent a 0 value to allow for a simpler
                           // representation of totalDegrees and totalSeconds.
 
-  return Promise.resolve(
-    currentSecond
-  ).then(updateBackgroundColor)
+  return Promise.resolve(currentSecond)
 }
 
 const updateBackgroundColor = (currentSecond: number) => {
