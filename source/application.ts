@@ -32,7 +32,7 @@ const getCurrentSecond = () => {
 const logCurrentSecond = (second: number) =>
   log('log', second)
 
-const application = () => {
+const logContactInfo = () => {
   log('info', '\n    ▶︎ ▲ ▼ ⬆︎ ▶︎  m a d e  t h i s .\n ')
   log('info', '          ┌────GITHUB─────┐')
   log('info', '            ┌────────WEBSITE────────┐')
@@ -40,6 +40,10 @@ const application = () => {
   log('info', '└───────────────EMAIL───────────────┘')
   log('info', '          └────TWITTER────┘')
   log('info', '')
+}
+
+const application = () => {
+  logContactInfo()
 
   getUserMedia(constraints)
     .then(handleSuccess)
