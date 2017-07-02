@@ -22,15 +22,26 @@ const getCurrentSecond = () => {
   const currentTime = new Date()
   const currentSecond = currentTime.getHours() * 3600 +
                         currentTime.getMinutes() * 60 +
-                        currentTime.getSeconds()
+                        currentTime.getSeconds() +
+                        1 // Prevent a 0 value
 
   return Promise.resolve(
     currentSecond
-  ).then(logCurrentSecond)
+  ).then(updateBackgroundColor)
 }
 
-const logCurrentSecond = (second: number) =>
-  log('log', second)
+const updateBackgroundColor = (currentSecond: number) => {
+  const hueOffset = 240
+  const totalSeconds = 86400
+  const baseHue = hueOffset % 360
+  const hueStep = 360 / totalSeconds
+  const currentHue = (baseHue + (hueStep * currentSecond)) % 360
+
+  log('info', `currentSecond: ${currentSecond}`)
+  log('info', `currentHue: ${currentHue}`)
+
+  document.body.style.backgroundColor = `hsl(${currentHue}, 50%, 25%)`
+}
 
 const logContactInfo = () => {
   log('info', `
