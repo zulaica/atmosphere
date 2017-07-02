@@ -23,7 +23,9 @@ const getCurrentSecond = () => {
   const currentSecond = currentTime.getHours() * 3600 +
                         currentTime.getMinutes() * 60 +
                         currentTime.getSeconds() +
-                        1 // Prevent a 0 value
+                        // Prevent a 0 value to allow for a simpler
+                        // representation of totalDegrees and totalSeconds
+                        1
 
   return Promise.resolve(
     currentSecond
