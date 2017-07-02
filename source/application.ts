@@ -39,7 +39,7 @@ const updateBackgroundColor = (currentSecond: number) => {
 
   const baseHue = hueOffset % totalDegrees
   const hueStep = totalDegrees / totalSeconds
-  const currentHue = (baseHue + (hueStep * currentSecond)) % 360
+  const currentHue = (baseHue + (hueStep * currentSecond)) % totalDegrees
 
   log('info', `currentSecond: ${currentSecond}`)
   log('info', `currentHue: ${currentHue}`)
