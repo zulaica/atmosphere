@@ -14,8 +14,9 @@ const handleSuccess = () => {
   const currentSecondPoller = new Poller()
 
   displayStatusMessage('success', '🎤 Microphone access enabled.')
-    .then(() => currentSecondPoller.start(getCurrentSecond, 1000))
-    .then(() => setTimeout(currentSecondPoller.stop, 10000))
+    .then(getCurrentSecond)
+    .then(() => currentSecondPoller.start(getCurrentSecond, 240 * 1000))
+    .then(() => setTimeout(currentSecondPoller.stop, 240 * 10 * 1000))
 }
 
 const getCurrentSecond = () => {
@@ -41,10 +42,13 @@ const updateBackgroundColor = (currentSecond: number) => {
   const currentStep = hueStep * currentSecond
   const currentHue = (baseHue + currentStep) % totalDegrees
 
-  log('info', `currentSecond: ${currentSecond}`)
-  log('info', `currentHue: ${currentHue}`)
-
   document.body.style.backgroundColor = `hsl(${currentHue}, 50%, 25%)`
+
+  log('info', `
+    ⏳ currentSecond: ${currentSecond}
+    🎨 currentHue: ${currentHue}
+    🖍 RGB value: ${document.body.style.backgroundColor}
+  `)
 }
 
 const logContactInfo = () => {
