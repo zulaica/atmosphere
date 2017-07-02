@@ -23,7 +23,8 @@ export const noOp = () => { return }
 export class Poller {
   private intervalId: number
 
-  public start = (fn: Promise<void>, duration: number) => {
+// tslint:disable-next-line:ban-types
+  public start = (fn: Function, duration: number) => {
     if (!this.intervalId) {
       this.intervalId = setInterval(fn, duration)
     }
