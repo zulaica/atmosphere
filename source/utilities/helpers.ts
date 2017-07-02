@@ -4,9 +4,7 @@ export const displayStatusMessage = (type: string, status: string) => {
   messageContainer.appendChild(message)
   messageContainer.className = type
 
-  return Promise.resolve(
-    document.body.appendChild(messageContainer)
-  )
+  document.body.appendChild(messageContainer)
 }
 
 // TODO: method parameter should be limited to actual Console methods
