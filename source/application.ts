@@ -20,8 +20,7 @@ const handleSuccess = () => {
     .then(() => currentSecondPoller.start(() => {
       getCurrentSecond()
         .then(updateBackgroundColor)
-    }, 240 * 1000)
-    )
+    }, 240 * 1000))
     .then(() => setTimeout(currentSecondPoller.stop, 240 * 10 * 1000))
 }
 
