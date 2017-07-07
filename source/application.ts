@@ -15,13 +15,9 @@ const handleSuccess = () => {
 
   const currentSecondPoller = new Poller()
 
-  getCurrentSecond()
-    .then(getCurrentHue)
-    .then(updateBackgroundColor)
+  renderBackground()
     .then(() => currentSecondPoller.start(() => {
-      getCurrentSecond()
-        .then(getCurrentHue)
-        .then(updateBackgroundColor)
+      renderBackground()
     }, 240 * 1000))
     .then(() => setTimeout(currentSecondPoller.stop, 240 * 1000 * 10))
 }
@@ -60,6 +56,11 @@ const updateBackgroundColor = (currentHue: number) => {
     🖍 RGB value: ${document.body.style.backgroundColor}
   `)
 }
+
+const renderBackground = () =>
+  getCurrentSecond()
+    .then(getCurrentHue)
+    .then(updateBackgroundColor)
 
 const logContactInfo = () => {
   log('info', `
