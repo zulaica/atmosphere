@@ -62,7 +62,7 @@ const renderBackground = () =>
     .then(getCurrentHue)
     .then(updateBackgroundColor)
 
-const logContactInfo = () => {
+const logContactInfo = () =>
   log('info', `
     ▶︎ ▲ ▼ ⬆︎ ▶︎  m a d e  t h i s .
 
@@ -73,7 +73,6 @@ const logContactInfo = () => {
           └────TWITTER────┘
 
 `)
-}
 
 const application = () => {
   logContactInfo()
