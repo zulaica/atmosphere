@@ -1,7 +1,7 @@
 import { displayStatusMessage } from './helpers'
 import noOp from './noop'
 
-export const errorHandler = (error: string | Error) =>
+const errorHandler = (error: string | Error) =>
   isLegacyError(error)
     .then(createErrorObject)
     .then(createFriendlyError)
@@ -35,3 +35,5 @@ const createFriendlyError = (error: Error) => {
         .then(({type, status}) => displayStatusMessage(type, status))
   }
 }
+
+export default errorHandler
