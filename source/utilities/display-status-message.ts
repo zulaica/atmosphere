@@ -1,4 +1,4 @@
-export const displayStatusMessage = (type: string, status: string) => {
+const displayStatusMessage = (type: string, status: string) => {
   const messageContainer = document.createElement('p')
   const message = document.createTextNode(status)
   messageContainer.appendChild(message)
@@ -6,3 +6,5 @@ export const displayStatusMessage = (type: string, status: string) => {
 
   document.body.appendChild(messageContainer)
 }
+
+export default displayStatusMessage

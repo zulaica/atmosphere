@@ -1,4 +1,4 @@
-import { displayStatusMessage } from './helpers'
+import displayStatusMessage from './display-status-message'
 import noOp from './noop'
 
 const errorHandler = (error: string | Error) =>
