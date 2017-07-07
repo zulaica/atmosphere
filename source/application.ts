@@ -11,9 +11,7 @@ const handleError = (error: string | Error) =>
   errorHandler(error)
 
 const handleSuccess = () => {
-  log('info', `
-    🎤 Microphone access enabled.
-  `)
+  log('info', `🎤 Microphone access enabled.`)
 
   const currentSecondPoller = new Poller()
 
@@ -32,9 +30,9 @@ const getCurrentSecond = () => {
                         currentTime.getSeconds() +
                         1 // Prevent a 0 value to allow for a simpler
                           // representation of totalDegrees and totalSeconds.
-  log('info', `
-    ⏳ currentSecond: ${currentSecond}
-  `)
+
+  log('info', `⏳ currentSecond: ${currentSecond}`)
+
   return Promise.resolve(currentSecond)
 }
 
@@ -47,16 +45,15 @@ const getCurrentHue = (currentSecond: number) => {
   const currentStep = hueStep * currentSecond
   const currentHue = (hueOffset + currentStep) % totalDegrees
 
+  log('info', `🎨 currentHue: ${currentHue}`)
+
   return Promise.resolve(currentHue)
 }
 
 const updateBackgroundColor = (currentHue: number) => {
   document.body.style.backgroundColor = `hsl(${currentHue}, 50%, 25%)`
 
-  log('info', `
-    🎨 currentHue: ${currentHue}
-    🖍 RGB value: ${document.body.style.backgroundColor}
-  `)
+  log('info', `🖍 Background value: ${document.body.style.backgroundColor}`)
 }
 
 const renderBackground = () =>
