@@ -1,11 +1,11 @@
   // tslint:disable
   /*
-  * ----------------------------------------------------------------------------
-  * Microphone and Camera Access
-  * ----------------------------------------------------------------------------
-  * Basic shim ported from MDN example
-  * https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia#Using_the_new_API_in_older_browsers
-  */
+   * ---------------------------------------------------------------------------
+   * Microphone and Camera Access
+   * ---------------------------------------------------------------------------
+   * Basic shim ported from MDN example
+   * https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia#Using_the_new_API_in_older_browsers
+   */
   // tslint:enable
 /// <reference types="webrtc" />
 export const getUserMedia = (constraints: MediaStreamConstraints) => {
