@@ -18,9 +18,9 @@ const handleSuccess = () => {
   const pollAt240Seconds = new Poller(240 * 1000)
 
   renderBackground()
-    .then(() => pollAt240Seconds.start(() => {
-      renderBackground()
-    }))
+    .then(() => pollAt240Seconds.start(
+      renderBackground
+    ))
     .then(() => setTimeout(pollAt240Seconds.stop, 240 * 1000 * 10))
 }
 
