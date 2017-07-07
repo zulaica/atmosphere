@@ -16,9 +16,11 @@ const handleSuccess = () => {
   const currentSecondPoller = new Poller()
 
   getCurrentSecond()
+    .then(getCurrentHue)
     .then(updateBackgroundColor)
     .then(() => currentSecondPoller.start(() => {
       getCurrentSecond()
+        .then(getCurrentHue)
         .then(updateBackgroundColor)
     }, 240 * 1000))
     .then(() => setTimeout(currentSecondPoller.stop, 240 * 1000 * 10))
@@ -31,11 +33,13 @@ const getCurrentSecond = () => {
                         currentTime.getSeconds() +
                         1 // Prevent a 0 value to allow for a simpler
                           // representation of totalDegrees and totalSeconds.
-
+  log('info', `
+    ⏳ currentSecond: ${currentSecond}
+  `)
   return Promise.resolve(currentSecond)
 }
 
-const updateBackgroundColor = (currentSecond: number) => {
+const getCurrentHue = (currentSecond: number) => {
   const totalDegrees = 360
   const hueOffset = 240 // Start the day (midnight/0) at blue.
   const totalSeconds = 86400 // Total number of seconds in a 24-hour period.
@@ -45,10 +49,13 @@ const updateBackgroundColor = (currentSecond: number) => {
   const currentStep = hueStep * currentSecond
   const currentHue = (baseHue + currentStep) % totalDegrees
 
+  return Promise.resolve(currentHue)
+}
+
+const updateBackgroundColor = (currentHue: number) => {
   document.body.style.backgroundColor = `hsl(${currentHue}, 50%, 25%)`
 
   log('info', `
-    ⏳ currentSecond: ${currentSecond}
     🎨 currentHue: ${currentHue}
     🖍 RGB value: ${document.body.style.backgroundColor}
   `)
