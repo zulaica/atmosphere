@@ -1,7 +1,7 @@
 import errorHandler from './utilities/error-handling'
+import getUserMedia from './utilities/get-user-media'
 import { log } from './utilities/helpers'
 import Poller from './utilities/poller'
-import { getUserMedia } from './utilities/shims'
 
 const constraints = {
   audio: true,

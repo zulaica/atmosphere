@@ -8,7 +8,7 @@
    */
   // tslint:enable
 /// <reference types="webrtc" />
-export const getUserMedia = (constraints: MediaStreamConstraints) => {
+const getUserMedia = (constraints: MediaStreamConstraints) => {
   if (!navigator.mediaDevices) {
     navigator.mediaDevices = {} as MediaDevices
   }
@@ -29,3 +29,5 @@ export const getUserMedia = (constraints: MediaStreamConstraints) => {
 
   return navigator.mediaDevices.getUserMedia(constraints)
 }
+
+export default getUserMedia
