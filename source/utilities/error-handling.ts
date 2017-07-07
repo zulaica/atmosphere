@@ -27,7 +27,10 @@ const createFriendlyError = (error: Error) => {
     case 'PERMISSION_DENIED':
     case 'PermissionDeniedError':
       return Promise
-        .resolve({ type: 'error', status: '🎤 Microphone access disabled.' })
+        .resolve({
+          status: '🚫🎤 Access to the microphone denied.',
+          type: 'error'
+        })
         .then(({type, status}) => displayStatusMessage(type, status))
     default:
       return Promise
