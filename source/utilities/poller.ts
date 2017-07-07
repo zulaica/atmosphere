@@ -1,4 +1,4 @@
-export class Poller {
+class Poller {
   public duration: number
 
   private intervalId: number
@@ -19,3 +19,5 @@ export class Poller {
     this.intervalId = -1
   }
 }
+
+export default Poller
