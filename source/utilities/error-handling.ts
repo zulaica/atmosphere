@@ -1,12 +1,11 @@
 import { displayStatusMessage } from './helpers'
 import noOp from './noop'
 
-export const errorHandler = (error: string | Error) => {
+export const errorHandler = (error: string | Error) =>
   isLegacyError(error)
     .then(createErrorObject)
     .then(createFriendlyError)
     .catch(noOp)
-}
 
 const isLegacyError = (error: string | Error) => {
   if (typeof error === 'string') {
