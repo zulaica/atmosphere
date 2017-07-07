@@ -40,10 +40,9 @@ const getCurrentHue = (currentSecond: number) => {
   const hueOffset = 240 // Start the day (midnight/0) at blue.
   const totalSeconds = 86400 // Total number of seconds in a 24-hour period.
 
-  const baseHue = hueOffset % totalDegrees
   const hueStep = totalDegrees / totalSeconds
   const currentStep = hueStep * currentSecond
-  const currentHue = (baseHue + currentStep) % totalDegrees
+  const currentHue = (hueOffset + currentStep) % totalDegrees
 
   return Promise.resolve(currentHue)
 }
