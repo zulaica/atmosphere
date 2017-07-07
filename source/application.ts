@@ -13,14 +13,14 @@ const handleError = (error: string | Error) =>
 const handleSuccess = () => {
   log('info', `🎤 Microphone access enabled.`)
 
-  const pollAt240Seconds = new Poller() // 240 seconds is the minimum amount of
-                                        // time required to generate a new RGB
-                                        // value.
+  // 240 seconds is the minimum amount of time required to generate a new
+  // RGB value.
+  const pollAt240Seconds = new Poller(240 * 1000)
 
   renderBackground()
     .then(() => pollAt240Seconds.start(() => {
       renderBackground()
-    }, 240 * 1000))
+    }))
     .then(() => setTimeout(pollAt240Seconds.stop, 240 * 1000 * 10))
 }
 
