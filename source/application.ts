@@ -1,5 +1,6 @@
 import { errorHandler } from './utilities/error-handling'
-import { log, Poller } from './utilities/helpers'
+import { log } from './utilities/helpers'
+import { Poller } from './utilities/poller'
 import { getUserMedia } from './utilities/shims'
 
 const constraints = {
