@@ -1,4 +1,4 @@
-import errorHandler from './utilities/error-handling'
+import errorHandler from './utilities/error-handler'
 import getUserMedia from './utilities/get-user-media'
 import log from './utilities/logger'
 import Poller from './utilities/poller'
