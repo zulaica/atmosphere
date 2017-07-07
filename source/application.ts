@@ -1,5 +1,5 @@
 import { errorHandler } from './utilities/error-handling'
-import { displayStatusMessage, log, Poller } from './utilities/helpers'
+import { log, Poller } from './utilities/helpers'
 import { getUserMedia } from './utilities/shims'
 
 const constraints = {
@@ -11,7 +11,9 @@ const handleError = (error: string | Error) =>
   errorHandler(error)
 
 const handleSuccess = () => {
-  displayStatusMessage('success', '🎤 Microphone access enabled.')
+  log('info', `
+    🎤 Microphone access enabled.
+  `)
 
   const currentSecondPoller = new Poller()
 
