@@ -1,4 +1,3 @@
-import displayStatusMessage from './display-status-message'
 import noOp from './noop'
 
 const errorHandler = (error: string | Error) =>
@@ -27,16 +26,22 @@ const createFriendlyError = (error: Error) => {
     case 'PERMISSION_DENIED':
     case 'PermissionDeniedError':
       return Promise
-        .resolve({
-          status: '🚫🎤 Access to the microphone denied.',
-          type: 'error'
-        })
-        .then(({type, status}) => displayStatusMessage(type, status))
+        .resolve({ status: '🚫🎤 Access to the microphone denied.' })
+        .then(({status}) => displayError(status))
     default:
       return Promise
-        .resolve({ type: 'error', status: error.message })
-        .then(({type, status}) => displayStatusMessage(type, status))
+        .resolve({ status: error.message })
+        .then(({status}) => displayError(status))
   }
+}
+
+const displayError = (status: string) => {
+  const messageContainer = document.createElement('p')
+  const message = document.createTextNode(status)
+  messageContainer.appendChild(message)
+  messageContainer.className = 'error'
+
+  document.body.appendChild(messageContainer)
 }
 
 export default errorHandler
