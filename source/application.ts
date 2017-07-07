@@ -18,8 +18,8 @@ const handleSuccess = () => {
   renderBackground()
     .then(() => currentSecondPoller.start(() => {
       renderBackground()
-    }, 240 * 1000)) // Poll every four minutes to prevent excessive, unnecessary
-                    // hue calculations and background repainting.
+    }, 240 * 1000)) // Poll every 240 seconds to prevent unnecessary hue
+                    // calculations and background repainting.
     .then(() => setTimeout(currentSecondPoller.stop, 240 * 1000 * 10))
 }
 
