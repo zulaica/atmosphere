@@ -1,4 +1,5 @@
-import { displayStatusMessage, noOp } from './helpers'
+import { displayStatusMessage } from './helpers'
+import noOp from './noop'
 
 export const errorHandler = (error: string | Error) => {
   isLegacyError(error)

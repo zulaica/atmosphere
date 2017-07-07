@@ -15,5 +15,3 @@ export const log = (method: string, message: string | number) => {
     (console as any)[method].call(console, message)
   )
 }
-
-export const noOp = () => { return }
