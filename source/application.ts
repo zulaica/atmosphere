@@ -1,6 +1,6 @@
 import errorHandler from './utilities/error-handling'
 import getUserMedia from './utilities/get-user-media'
-import { log } from './utilities/helpers'
+import log from './utilities/logger'
 import Poller from './utilities/poller'
 
 const constraints = {
