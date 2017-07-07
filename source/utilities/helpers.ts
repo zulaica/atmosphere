@@ -19,18 +19,18 @@ export const log = (method: string, message: string | number) => {
 export const noOp = () => { return }
 
 export class Poller {
-  public intervalDuration: number
+  public duration: number
 
   private intervalId: number
 
   constructor(interval: number) {
-    this.intervalDuration = interval
+    this.duration = interval
   }
 
 // tslint:disable-next-line:ban-types
   public start = (fn: Function) => {
     if (!this.intervalId) {
-      this.intervalId = setInterval(fn, this.intervalDuration)
+      this.intervalId = setInterval(fn, this.duration)
     }
   }
 
