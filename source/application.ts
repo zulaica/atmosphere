@@ -9,6 +9,16 @@ const CONSTRAINTS = {
   video: false
 }
 
+const CONTACT_INFO = `
+    ▶︎ ▲ ▼ ⬆︎ ▶︎  m a d e  t h i s .
+
+          ┌────GITHUB─────┐
+            ┌────────WEBSITE────────┐
+ d a v i d @ z u l a i c a . i n f o
+└───────────────EMAIL───────────────┘
+          └────TWITTER────┘
+  `
+
 const handleError = (error: string | Error) =>
   errorHandler(error)
 
@@ -17,15 +27,7 @@ const handleSuccess = () =>
     .then(renderVisualizer)
 
 const logContactInfo = () =>
-  log('info', `
-    ▶︎ ▲ ▼ ⬆︎ ▶︎  m a d e  t h i s .
-
-          ┌────GITHUB─────┐
-            ┌────────WEBSITE────────┐
- d a v i d @ z u l a i c a . i n f o
-└───────────────EMAIL───────────────┘
-          └────TWITTER────┘
-  `)
+  log('info', CONTACT_INFO)
 
 const application = () =>
   getUserMedia(CONSTRAINTS)
