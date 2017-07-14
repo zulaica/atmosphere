@@ -1,7 +1,7 @@
 interface Window {
   on(
     event: string,
-    eventListener: EventListener,
+    eventListener: EventListenerOrEventListenerObject,
     options?: boolean | undefined
   ): void
 }
