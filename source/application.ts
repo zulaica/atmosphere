@@ -1,4 +1,5 @@
 import errorHandler from './utilities/error-handler'
+import on from './utilities/event-listener'
 import getUserMedia from './utilities/get-user-media'
 import log from './utilities/logger'
 import Poller from './utilities/poller'
@@ -82,4 +83,4 @@ const application = () => {
     .catch(handleError)
 }
 
-window.addEventListener('load', application, false)
+on(window, 'load', application)
