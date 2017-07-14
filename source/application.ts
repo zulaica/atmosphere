@@ -83,4 +83,4 @@ const application = () => {
     .catch(handleError)
 }
 
-on(window, 'load', application)
+on('load', application)

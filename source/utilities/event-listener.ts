@@ -1,7 +1,14 @@
-const on = (eventTarget: EventTarget,
-            event: string,
-            eventListener: EventListener,
-            options: boolean | AddEventListenerOptions = false) =>
-  eventTarget.addEventListener(event, eventListener, options)
+// tslint:disable-next-line
+declare global {
+  interface Node {
+    on(
+      event: string,
+      eventListener: EventListener,
+      options?: boolean | undefined
+    ): void
+  }
+}
 
-export default on
+export default Node.prototype.on = (event, eventListener, options = false) => {
+  addEventListener(event, eventListener, options)
+}
