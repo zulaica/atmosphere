@@ -5,6 +5,11 @@ import getUserMedia from './utilities/get-user-media'
 import log from './utilities/logger'
 import renderVisualizer from './visualizers/default'
 
+const {
+  CONSTRAINTS,
+  CONTACT_INFO
+} = CONST
+
 const handleError = (error: string | Error) =>
   errorHandler(error)
 
@@ -13,10 +18,10 @@ const handleSuccess = () =>
     .then(renderVisualizer)
 
 const logContactInfo = () =>
-  log('info', CONST.CONTACT_INFO)
+  log('info', CONTACT_INFO)
 
 const application = () =>
-  getUserMedia(CONST.CONSTRAINTS)
+  getUserMedia(CONSTRAINTS)
     .then(handleSuccess)
     .catch(handleError)
 
