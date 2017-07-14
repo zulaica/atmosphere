@@ -4,7 +4,7 @@ import getUserMedia from './utilities/get-user-media'
 import log from './utilities/logger'
 import renderVisualizer from './visualizers/default'
 
-const constraints = {
+const CONSTRAINTS = {
   audio: true,
   video: false
 }
@@ -28,7 +28,7 @@ const logContactInfo = () =>
   `)
 
 const application = () =>
-  getUserMedia(constraints)
+  getUserMedia(CONSTRAINTS)
     .then(handleSuccess)
     .catch(handleError)
 
