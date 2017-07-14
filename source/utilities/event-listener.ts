@@ -1,6 +1,6 @@
 // tslint:disable-next-line
 declare global {
-  interface Node {
+  interface Window {
     on(
       event: string,
       eventListener: EventListener,
@@ -9,6 +9,5 @@ declare global {
   }
 }
 
-export default Node.prototype.on = (event, eventListener, options = false) => {
+export default Window.prototype.on = (event, eventListener, options = false) =>
   addEventListener(event, eventListener, options)
-}
