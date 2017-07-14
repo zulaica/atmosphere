@@ -1,4 +1,5 @@
 import log from '../utilities/logger'
+import Poller from '../utilities/poller'
 
 const getCurrentSecond = () => {
   const currentTime = new Date()
@@ -38,4 +39,16 @@ const renderBackground = () =>
     .then(getCurrentHue)
     .then(updateBackgroundColor)
 
-export default renderBackground
+const renderVisualizer = () => {
+  // 240 seconds is the minimum amount of time required to generate a new
+  // RGB value.
+  const pollAt240Seconds = new Poller(240 * 1000)
+
+  renderBackground()
+    .then(() => pollAt240Seconds.start(
+      renderBackground
+    ))
+    .then(() => setTimeout(pollAt240Seconds.stop, 240 * 1000 * 10))
+}
+
+export default renderVisualizer
