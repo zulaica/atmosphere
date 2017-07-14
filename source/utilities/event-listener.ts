@@ -12,10 +12,9 @@ const onEventMethod =
    options = false) =>
     addEventListener(event, eventListener, options)
 
-// tslint:disable-next-line
-interface Node extends OnEventMethodInterface { }
-// tslint:disable-next-line
-interface Window extends OnEventMethodInterface { }
+interface Node extends OnEventMethodInterface { this: Node }
+
+interface Window extends OnEventMethodInterface { this: Window }
 
 Document.prototype.on = onEventMethod
 Window.prototype.on = onEventMethod
