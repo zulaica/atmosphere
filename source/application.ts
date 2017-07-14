@@ -75,12 +75,10 @@ const logContactInfo = () =>
           └────TWITTER────┘
   `)
 
-const application = () => {
-  logContactInfo()
-
+const application = () =>
   getUserMedia(constraints)
     .then(handleSuccess)
     .catch(handleError)
-}
 
+document.on('DOMContentLoaded', logContactInfo)
 window.on('load', application)
