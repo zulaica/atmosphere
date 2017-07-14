@@ -12,10 +12,9 @@ const constraints = {
 const handleError = (error: string | Error) =>
   errorHandler(error)
 
-const handleSuccess = () => {
+const handleSuccess = () =>
   log('info', `🎤 Microphone access enabled.`)
-  renderVisualizer()
-}
+    .then(renderVisualizer)
 
 const logContactInfo = () =>
   log('info', `
