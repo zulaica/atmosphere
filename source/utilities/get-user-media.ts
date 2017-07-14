@@ -22,9 +22,9 @@ const getUserMedia = (constraints: MediaStreamConstraints) => {
       return Promise.reject(new Error('😢 Your browser is not supported.'))
     }
 
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) =>
       legacyGetUserMedia.call(navigator, constraints, resolve, reject)
-    })
+    )
   }
 
   return navigator.mediaDevices.getUserMedia(constraints)
