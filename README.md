@@ -16,14 +16,17 @@
 * Use the present tense (e.g. "Do the thing" not "Did the thing")
 * Use the imperative mood (e.g. "Do the thing" not "Does the thing")
 * Start the commit message with the appropriate emoji pair (followed by two
-  spaces):
-  * "🆕 📝  " when adding documentation
-  * "🔄 📝  " when editing documentation
-  * "🆕 🛠  " when adding new code
-  * "🔄 🛠  " when refactoring code
-  * "⬆️ 📦  " when upgrading a dependency
-  * "⬇️ 📦  " when downgrading a dependency
+  spaces)
 * Use actual emoji and not Github's emoji short-codes
+
+  Emoji Pair | Usage
+  ---------- | -----------------------------
+  🆕 📝       | when adding documentation
+  🔄 📝       | when editing documentation
+  🆕 🛠       | when adding new code
+  🔄 🛠       | when refactoring code
+  ⬆️ 📦       | when upgrading a dependency
+  ⬇️ 📦       | when downgrading a dependency
 
 ## License
 Atmosphere is licensed under the [Creative Commons
