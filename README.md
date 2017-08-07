@@ -18,7 +18,7 @@
 * Start the commit message with the appropriate emoji:
   * "🆕 📝  " when adding documentation
   * "🔄 📝  " when editing documentation
-  * "🆕 🛠  " when adding a new code
+  * "🆕 🛠  " when adding new code
   * "🔄 🛠  " when refactoring code
   * "⬆️ 📦  " when upgrading a dependency
   * "⬇️ 📦  " when downgrading a dependency
