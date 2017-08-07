@@ -1,4 +1,4 @@
-import * as CONST from './constants'
+import * as CONSTANTS from './constants'
 import errorHandler from './utilities/error-handler'
 import './utilities/event-listener'
 import getUserMedia from './utilities/get-user-media'
@@ -8,7 +8,7 @@ import renderVisualizer from './visualizers/default'
 const {
   CONSTRAINTS,
   CONTACT_INFO
-} = CONST
+} = CONSTANTS
 
 const handleError = (error: string | Error) =>
   errorHandler(error)
