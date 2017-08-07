@@ -15,7 +15,8 @@
 * Limit commit messages to 80 characters
 * Use the present tense (e.g. "Do the thing" not "Did the thing")
 * Use the imperative mood (e.g. "Do the thing" not "Does the thing")
-* Start the commit message with the appropriate emoji:
+* Start the commit message with the appropriate emoji pair (followed by two
+  spaces):
   * "🆕 📝  " when adding documentation
   * "🔄 📝  " when editing documentation
   * "🆕 🛠  " when adding new code
