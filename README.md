@@ -22,6 +22,7 @@
   * "🔄 🛠  " when refactoring code
   * "⬆️ 📦  " when upgrading a dependency
   * "⬇️ 📦  " when downgrading a dependency
+* Use actual emoji and not Github's emoji short-codes
 
 ## License
 Atmosphere is licensed under the [Creative Commons
