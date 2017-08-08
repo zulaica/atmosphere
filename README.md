@@ -25,6 +25,7 @@
   🔄 📝       | editing documentation    | `::editdocs`
   🆕 🛠       | adding new code          | `::newcode`
   🔄 🛠       | refactoring code         | `::editcode`
+  🆕 📦       | adding a dependency      | `::pkgnew`
   ⬆️ 📦       | upgrading a dependency   | `::pkgup`
   ⬇️ 📦       | downgrading a dependency | `::pkgdown`
   💨 🐛       | fixing a bug             | `::bugfix`
