@@ -21,10 +21,10 @@
 
   Emoji Pair | Usage                    | Suggested Text Shortcut
   ---------- | ------------------------ | -----------------------
-  🆕 📝       | adding documentation     | `::newdocs`
-  🔄 📝       | editing documentation    | `::editdocs`
-  🆕 🛠       | adding new code          | `::newcode`
-  🔄 🛠       | refactoring code         | `::editcode`
+  🆕 📝       | adding documentation     | `::docsnew`
+  🔄 📝       | editing documentation    | `::docsedit`
+  🆕 🛠       | adding new code          | `::codenew`
+  🔄 🛠       | refactoring code         | `::codeedit`
   🆕 📦       | adding a dependency      | `::pkgnew`
   ⬆️ 📦       | upgrading a dependency   | `::pkgup`
   ⬇️ 📦       | downgrading a dependency | `::pkgdown`
