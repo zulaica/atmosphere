@@ -19,19 +19,19 @@
   spaces)
 * Use actual emoji and not Github's emoji short-codes
 
-Emoji Pair | Usage                    | Suggested Text Shortcut
----------- | ------------------------ | -----------------------
-||
-🆕 🛠       | adding new code          | `::codenew`
-🔄 🛠       | refactoring code         | `::codeedit`
-💨 🐛       | fixing a bug             | `::bugfix`
-||
-🆕 📦       | adding a dependency      | `::pkgnew`
-⬆️ 📦       | upgrading a dependency   | `::pkgup`
-⬇️ 📦       | downgrading a dependency | `::pkgdown`
-||
-🆕 📝       | adding documentation     | `::docsnew`
-🔄 📝       | editing documentation    | `::docsedit`
+Emoji Pair    | Usage                    | Suggested Text Shortcut
+------------- | ------------------------ | -----------------------
+Code          |                          |
+🆕 🛠          | adding new code          | `::codenew`
+🔄 🛠          | refactoring code         | `::codeedit`
+💨 🐛          | fixing a bug             | `::bugfix`
+Dependencies  |                          |
+🆕 📦          | adding a dependency      | `::pkgnew`
+⬆️ 📦          | upgrading a dependency   | `::pkgup`
+⬇️ 📦          | downgrading a dependency | `::pkgdown`
+Documentation |                          |
+🆕 📝          | adding documentation     | `::docsnew`
+🔄 📝          | editing documentation    | `::docsedit`
 
 ## License
 Atmosphere is licensed under the [Creative Commons
