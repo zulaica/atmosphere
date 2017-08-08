@@ -27,6 +27,7 @@
   🔄 🛠       | when refactoring code
   ⬆️ 📦       | when upgrading a dependency
   ⬇️ 📦       | when downgrading a dependency
+  💨 🐛       | when fixing a bug
 
 ## License
 Atmosphere is licensed under the [Creative Commons
