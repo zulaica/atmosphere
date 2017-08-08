@@ -19,15 +19,15 @@
   spaces)
 * Use actual emoji and not Github's emoji short-codes
 
-  Emoji Pair | Usage
-  ---------- | -----------------------------
-  🆕 📝       | when adding documentation
-  🔄 📝       | when editing documentation
-  🆕 🛠       | when adding new code
-  🔄 🛠       | when refactoring code
-  ⬆️ 📦       | when upgrading a dependency
-  ⬇️ 📦       | when downgrading a dependency
-  💨 🐛       | when fixing a bug
+  Emoji Pair | Usage                         | Suggested Text Shortcuts
+  ---------- | ----------------------------- | ------------------------
+  🆕 📝       | when adding documentation     | `::newdocs`
+  🔄 📝       | when editing documentation    | `::editdocs`
+  🆕 🛠       | when adding new code          | `::newcode`
+  🔄 🛠       | when refactoring code         | `::editcode`
+  ⬆️ 📦       | when upgrading a dependency   | `::pkgup`
+  ⬇️ 📦       | when downgrading a dependency | `::pkgdown`
+  💨 🐛       | when fixing a bug             | `::bugfix`
 
 ## License
 Atmosphere is licensed under the [Creative Commons
