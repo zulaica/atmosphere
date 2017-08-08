@@ -21,14 +21,17 @@
 
   Emoji Pair | Usage                    | Suggested Text Shortcut
   ---------- | ------------------------ | -----------------------
-  🆕 📝       | adding documentation     | `::docsnew`
-  🔄 📝       | editing documentation    | `::docsedit`
+  ||
   🆕 🛠       | adding new code          | `::codenew`
   🔄 🛠       | refactoring code         | `::codeedit`
+  💨 🐛       | fixing a bug             | `::bugfix`
+  ||
   🆕 📦       | adding a dependency      | `::pkgnew`
   ⬆️ 📦       | upgrading a dependency   | `::pkgup`
   ⬇️ 📦       | downgrading a dependency | `::pkgdown`
-  💨 🐛       | fixing a bug             | `::bugfix`
+  ||
+  🆕 📝       | adding documentation     | `::docsnew`
+  🔄 📝       | editing documentation    | `::docsedit`
 
 ## License
 Atmosphere is licensed under the [Creative Commons
