@@ -19,8 +19,8 @@
   spaces)
 * Use actual emoji and not Github's emoji short-codes
 
-Emoji Pair    | Usage                    | Suggested Text Shortcut
-------------- | ------------------------ | -----------------------
+Emoji Pair    | Usage                    | Suggested Text Shortcut<sup>[2]</sup>
+------------- | ------------------------ | -------------------------------------
 Code          |                          |
 🆕 🛠          | adding new code          | `::codenew`
 🔄 🛠          | refactoring code         | `::codeedit`
@@ -40,3 +40,6 @@ license](https://creativecommons.org/licenses/by-nc-sa/4.0/) (CC BY-NC-SA 4.0).
 
 ---
 <sup>[1]</sup> Borrowed heavily from [Atom's contribution documentation](https://github.com/atom/atom/blob/master/CONTRIBUTING.md#git-commit-messages).
+
+<sup>[2]</sup> [My handy TextExpander shortcuts](https://app.textexpander.com/public/0568f36aa710592f6b6d74abb542c8d0),
+set up to also add the two spaces after the emoji pair.
