@@ -6,13 +6,19 @@ Atmosphere:
 * [Git](https://git-scm.com/)
 * [Yarn](https://yarnpkg.com/)
 
-## Build Instructions
+## Installing
 1. Clone this repository
     - via HTTPS `$ git clone https://github.com/zulaica/atmosphere.git` or
     - via SSH `$ git clone git@github.com:zulaica/atmosphere.git`
 2. `$ cd atmosphere`
 3. `$ yarn`
+
+## Building
 4. `$ yarn build`
+
+## Serving
+5. `$yarn serve`
+6. Visit http://localhost:8000
 
 ## Contributing
 
