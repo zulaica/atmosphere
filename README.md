@@ -18,7 +18,7 @@ Atmosphere:
 4. `$ yarn build`
 
 ## Serving
-5. `$yarn serve`
+5. `$ yarn serve`
 6. Visit http://localhost:8000
 
 ## Contributing
