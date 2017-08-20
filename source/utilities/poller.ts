@@ -7,8 +7,7 @@ class Poller {
     this.duration = interval
   }
 
-// tslint:disable-next-line:ban-types
-  public start = (fn: Function) => {
+  public start = (fn: VoidFunction) => {
     if (!this.intervalId) {
       this.intervalId = setInterval(fn, this.duration)
     }
