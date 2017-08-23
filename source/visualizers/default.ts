@@ -1,13 +1,17 @@
 import log from '../utilities/logger'
 import Poller from '../utilities/poller'
 
+const TOTAL_DEGREES = 360
+const HUE_OFFSET = 240 // Start the day (midnight/0) at blue.
+const TOTAL_SECONDS = 86400 // Total number of seconds in a 24-hour period.
+
 const getCurrentSecond = () => {
   const currentTime = new Date()
   const currentSecond = currentTime.getHours() * 3600 +
                         currentTime.getMinutes() * 60 +
                         currentTime.getSeconds() +
                         1 // Prevent a 0 value to allow for a simpler
-                          // representation of totalDegrees and totalSeconds.
+                          // representation of TOTAL_DEGREES and TOTAL_SECONDS.
 
   log('info', `⏳ currentSecond: ${currentSecond}`)
 
@@ -15,13 +19,9 @@ const getCurrentSecond = () => {
 }
 
 const getCurrentHue = (currentSecond: number) => {
-  const totalDegrees = 360
-  const hueOffset = 240 // Start the day (midnight/0) at blue.
-  const totalSeconds = 86400 // Total number of seconds in a 24-hour period.
-
-  const hueStep = totalDegrees / totalSeconds
+  const hueStep = TOTAL_DEGREES / TOTAL_SECONDS
   const currentStep = hueStep * currentSecond
-  const currentHue = (hueOffset + currentStep) % totalDegrees
+  const currentHue = (HUE_OFFSET + currentStep) % TOTAL_DEGREES
 
   log('info', `🎨 currentHue: ${currentHue}`)
 
