@@ -5,9 +5,10 @@ export default {
   format: 'iife',
   dest: 'dist/application.js',
   plugins: [
-  cleanup({
-    comments: ['ts3s']
-  }) ],
+    cleanup({
+      comments: ['ts3s']
+    })
+  ],
   sourceMap: true
 }
 

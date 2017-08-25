@@ -6,13 +6,11 @@ export default {
   format: 'iife',
   dest: 'dist/application.js',
   plugins: [
-  cleanup({
-    comments: ['ts3s']
-  }),
-  serve({
-    open: true,
-    contentBase: ''
-  }) ],
+    cleanup({
+      comments: ['ts3s']
+    }),
+    serve('')
+  ],
   sourceMap: true
 }
 
