@@ -3,7 +3,6 @@
 ## Prerequesites
 You will need the following installed on your computer in order to run
 Atmosphere:
-* [Python](https://www.python.org) (Optional, used to serve the application.)
 * [Git](https://git-scm.com/)
 * [Yarn](https://yarnpkg.com/)
 
@@ -19,7 +18,7 @@ Atmosphere:
 
 ## Serving
 5. `$ yarn serve`
-6. Visit http://localhost:8000
+6. Visit http://localhost:10001
 
 ## Contributing
 
