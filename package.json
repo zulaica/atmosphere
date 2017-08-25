@@ -5,7 +5,7 @@
   "license": "CC-BY-NC-SA-4.0",
   "devDependencies": {
     "@types/webrtc": "^0.0.21",
-    "rollup": "^0.43.0",
+    "rollup": "^0.48.2",
     "rollup-plugin-cleanup": "^1.0.1",
     "tslib": "^1.7.1",
     "tslint": "^5.4.3",
