@@ -4,8 +4,10 @@ export default {
   entry: 'build/application.js',
   format: 'iife',
   dest: 'dist/application.js',
-  plugins: [ cleanup({
+  plugins: [
+  cleanup({
     comments: ['ts3s']
   }) ],
   sourceMap: true
 }
+
