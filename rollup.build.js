@@ -1,14 +1,16 @@
 import cleanup from 'rollup-plugin-cleanup'
 
 export default {
-  entry: 'build/application.js',
-  format: 'iife',
-  dest: 'dist/application.js',
+  input: 'build/application.js',
+  output: {
+    file: 'dist/application.js',
+    format: 'iife',
+  },
   plugins: [
     cleanup({
       comments: ['ts3s']
     })
   ],
-  sourceMap: true
+  sourcemap: true
 }
 
