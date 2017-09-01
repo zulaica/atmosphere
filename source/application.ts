@@ -10,6 +10,11 @@ const {
   CONTACT_INFO
 } = CONSTANTS
 
+const application = () =>
+  getUserMedia(CONSTRAINTS)
+    .then(handleSuccess)
+    .catch(handleError)
+
 const handleError = (error: string | Error) =>
   errorHandler(error)
 
@@ -19,11 +24,6 @@ const handleSuccess = () =>
 
 const logContactInfo = () =>
   log('info', CONTACT_INFO)
-
-const application = () =>
-  getUserMedia(CONSTRAINTS)
-    .then(handleSuccess)
-    .catch(handleError)
 
 document.on('DOMContentLoaded', logContactInfo)
 window.on('load', application)
