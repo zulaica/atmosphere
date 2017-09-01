@@ -2,14 +2,14 @@
   "compileOnSave": true,
   "compilerOptions": {
     "target": "es5",
-    "module": "es2015",
+    "module": "esnext",
     "moduleResolution": "node",
     "alwaysStrict": true,
     "importHelpers": true,
     "lib": [
       "dom",
       "es5",
-      "es2015",
+      "esnext",
       "scripthost"
     ],
     "noFallthroughCasesInSwitch": true,
