@@ -1,4 +1,3 @@
-import log from '../utilities/logger'
 import Poller from '../utilities/poller'
 
 const TOTAL_DEGREES = 360
@@ -13,8 +12,6 @@ const getCurrentSecond = () => {
                         1 // Prevent a 0 value to allow for a simpler
                           // representation of TOTAL_DEGREES and TOTAL_SECONDS.
 
-  log('info', `⏳ currentSecond: ${currentSecond}`)
-
   return Promise.resolve(currentSecond)
 }
 
@@ -23,16 +20,11 @@ const getCurrentHue = (currentSecond: number) => {
   const currentStep = hueStep * currentSecond
   const currentHue = (HUE_OFFSET + currentStep) % TOTAL_DEGREES
 
-  log('info', `🎨 currentHue: ${currentHue}`)
-
   return Promise.resolve(currentHue)
 }
 
-const updateBackgroundColor = (currentHue: number) => {
+const updateBackgroundColor = (currentHue: number) =>
   document.body.style.backgroundColor = `hsl(${currentHue}, 50%, 25%)`
-
-  log('info', `🖍 Background value: ${document.body.style.backgroundColor}`)
-}
 
 const renderBackground = () =>
   getCurrentSecond()
