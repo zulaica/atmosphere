@@ -4,7 +4,7 @@
   "author": "David Zulaica <david@zulaica.info>",
   "license": "CC-BY-NC-SA-4.0",
   "devDependencies": {
-    "@types/webrtc": "^0.0.21",
+    "@types/webrtc": "0.0.22",
     "rollup": "0.51.1",
     "rollup-plugin-cleanup": "2.0.0",
     "rollup-plugin-serve": "^0.4.2",
