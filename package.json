@@ -6,7 +6,7 @@
   "devDependencies": {
     "@types/webrtc": "^0.0.21",
     "rollup": "0.51.1",
-    "rollup-plugin-cleanup": "^1.0.1",
+    "rollup-plugin-cleanup": "2.0.0",
     "rollup-plugin-serve": "^0.4.2",
     "tslib": "1.8.0",
     "tslint": "5.8.0",
