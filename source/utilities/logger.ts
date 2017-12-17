@@ -1,4 +1,4 @@
-interface ConsoleInterface {
+interface ConsoleInterface extends Console {
     // Not happy about the <any> Console index fix...
     // tslint:disable-next-line:no-any
     [index: string]: any
