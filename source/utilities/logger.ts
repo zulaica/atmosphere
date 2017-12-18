@@ -1,6 +1,6 @@
 interface ConsoleInterface extends Console {
-    // tslint:disable-next-line:no-any
-    [index: string]: any
+    [index: string]:
+      (value: string | boolean | undefined | Element) => {} | void
 }
 
 const log = (method: string, message: string | number) => {
