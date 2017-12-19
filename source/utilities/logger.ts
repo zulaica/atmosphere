@@ -3,7 +3,7 @@ interface ConsoleInterface extends Console {
       (value: string | boolean | undefined | Element) => {} | void
 }
 
-const log = (method: string, message: string | number) => {
+const log = (message: string | number, method: string = 'log') => {
   return Promise.resolve(
     (console as ConsoleInterface)[method].call(console, message)
   )

@@ -14,11 +14,11 @@ const handleError = (error: string | Error) =>
   errorHandler(error)
 
 const handleSuccess = () =>
-  log('info', `🎤 Microphone access enabled.`)
+  log(`🎤 Microphone access enabled.`, 'info')
     .then(renderVisualizer)
 
 const logContactInfo = () =>
-  log('info', CONTACT_INFO)
+  log(CONTACT_INFO)
 
 const application = () =>
   getUserMedia(CONSTRAINTS)
