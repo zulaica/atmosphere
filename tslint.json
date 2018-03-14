@@ -10,7 +10,7 @@
     "no-any": true,
     "no-console": [true],
     "only-arrow-functions": [true],
-    "quotemark": ["single"],
+    "quotemark": [true, "single"],
     "semicolon": [false],
     "trailing-comma": [false],
     "triple-equals": [true]
