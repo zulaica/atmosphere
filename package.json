@@ -4,13 +4,13 @@
   "author": "David Zulaica <david@zulaica.info>",
   "license": "CC-BY-NC-SA-4.0",
   "devDependencies": {
-    "@types/webrtc": "0.0.22",
-    "rollup": "0.51.1",
+    "@types/webrtc": "0.0.23",
+    "rollup": "0.56.5",
     "rollup-plugin-cleanup": "2.0.0",
     "rollup-plugin-serve": "^0.4.2",
-    "tslib": "1.8.0",
-    "tslint": "5.8.0",
-    "typescript": "2.6.1"
+    "tslib": "1.9.0",
+    "tslint": "5.9.1",
+    "typescript": "2.7.2"
   },
   "scripts": {
     "preflight": "rm -rf dist build && tsc",
