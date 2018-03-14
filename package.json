@@ -10,7 +10,7 @@
     "rollup-plugin-serve": "^0.4.2",
     "tslib": "1.8.0",
     "tslint": "5.8.0",
-    "typescript": "2.6.1"
+    "typescript": "2.7.2"
   },
   "scripts": {
     "preflight": "rm -rf dist build && tsc",
